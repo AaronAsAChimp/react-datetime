@@ -3,7 +3,7 @@
 // Definitions by: Ivan Verevkin <vereva@x-root.org>
 //     Updates by: Aaron Spaulding <aaron@sachimp.com>
 
-declare module 'react-datetime' {
+declare namespace reactDateTime {
 
   /*
    A stand-in type for Moment, this file currently has no way of guaranteeing
@@ -155,8 +155,12 @@ declare module 'react-datetime' {
       open: boolean;
   }
 
-  class ReactDatetime extends React.Component<DatetimepickerProps, DatetimepickerState> {
+  export class ReactDatetime extends React.Component<DatetimepickerProps, DatetimepickerState> {
   }
+}
 
+declare var ReactDatetime: typeof reactDateTime.ReactDatetime;
+
+declare module "react-datetime" {
   export = ReactDatetime;
 }
